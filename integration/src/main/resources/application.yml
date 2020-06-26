@@ -2,9 +2,9 @@ app.services.greeting.message: Hello World
 
 spring:
   datasource:
-    username: postgres
-    password: 123
-    url: jdbc:postgresql://localhost:5432/test
+    username: ${POSTGRESQL_USER:postgres}
+    password: ${POSTGRESQL_PASSWORD:123}
+    url: jdbc:postgresql://${POSTGRESQL_SERVICE_HOST:localhost}:${POSTGRESQL_SERVICE_PORT:5432}/${POSTGRESQL_DATABASE:test}
     driver-class-name: org.postgresql.Driver
   jpa:
     generate-ddl: true
