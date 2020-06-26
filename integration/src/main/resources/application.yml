@@ -1,0 +1,20 @@
+app.services.greeting.message: Hello World
+
+spring:
+  datasource:
+    username: postgres
+    password: 123
+    url: jdbc:postgresql://localhost:5432/test
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    show-sql : true
+    hibernate:
+      ddl-auto : update
+  main:
+    allow-bean-definition-overriding: true
+
+  # V(version)__description.sql
+#  flyway:
+#    baseline-on-migrate: true
+

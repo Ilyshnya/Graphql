@@ -1,0 +1,57 @@
+schema {
+    query: BookQueries
+    mutation: BookMutation
+}
+
+type BookQueries {
+    books: [Book]
+    book(id: ID!): Book!
+    booksByAuthor(authorName: String!): [Book]
+}
+
+type BookMutation{
+    createBook(book: BookInput!,id:Int,storeId:Int): Book
+    createBookV2(book: BookInput2!): Book
+}
+
+input BookInput2 {
+    name:String
+    price:Int
+    author:AuthorInput
+    stores:[MyStoreInput]
+}
+
+input MyStoreInput {
+    id: ID!
+    name: String
+    adress:String
+}
+
+input AuthorInput {
+    id:ID
+    name:String
+}
+
+input BookInput {
+    name:String
+    price:Int
+}
+
+type Book {
+    id: ID!
+    price: Int
+    name: String
+    author:Author
+    stores:[MyStore]
+}
+
+type Author {
+    id: ID!
+    name: String
+}
+
+type MyStore {
+    id: ID!
+    name: String
+    adress:String
+}
