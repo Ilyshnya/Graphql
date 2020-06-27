@@ -1,1 +1,0 @@
-insert into Book (id,name) values ( 1,'Book1');
