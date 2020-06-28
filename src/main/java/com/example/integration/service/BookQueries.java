@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class BookQueries implements GraphQLQueryResolver {
-    
+
     private final BookRepo bookRepo;
 
      public List<Book> books(){
