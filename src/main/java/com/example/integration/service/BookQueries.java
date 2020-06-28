@@ -11,6 +11,7 @@ import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 
 import java.util.List;
@@ -20,10 +21,7 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class BookQueries implements GraphQLQueryResolver {
-
-
-
-
+    
     private final BookRepo bookRepo;
 
      public List<Book> books(){
